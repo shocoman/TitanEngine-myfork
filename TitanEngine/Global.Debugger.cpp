@@ -88,6 +88,7 @@ void DebuggerReset()
         RtlZeroMemory(&myDBGCustomHandler, sizeof CustomHandler);
     }
     std::vector<BreakPointDetail>().swap(BreakPointBuffer);
+    std::unordered_map<ULONG_PTR, MemoryBreakpointPageData>().swap(MemoryBreakpointPages);
 }
 
 void ClearProcessList()
